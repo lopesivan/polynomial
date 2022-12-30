@@ -15,7 +15,7 @@ Polynomial integral (Polynomial p)
     integral.coefs.resize (integral.degree + 1);
 
     // Calcula os coeficientes da integral
-    for (int i = 0; i <= p.degree; i++)
+    for (auto i = 0; i <= p.degree; i++)
         integral.coefs[i + 1] = p.coefs[i] / (i + 1);
 
     return integral;
@@ -26,14 +26,14 @@ int main()
     // Cria um polinômio de grau 2
     Polynomial p;
     p.degree = 2;
-    p.coefs = {1, 2, 3};
+    p.coefs = {1, 2, 3}; // 3*x^2 + 2*x +1
 
     // Calcula a integral do polinômio
     Polynomial integral_p = integral (p);
 
     // Imprime o polinômio integral
     std::cout << "f(x) = ";
-    for (int i = integral_p.degree; i >= 0; i--)
+    for (auto i = integral_p.degree; i >= 0; i--)
         std::cout << integral_p.coefs[i] << "x^" << i << " + ";
     std::cout << std::endl;
 
